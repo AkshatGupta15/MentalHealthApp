@@ -17,16 +17,16 @@ class _PhoneAuthState extends State<PhoneAuth> {
     try{
       await FirebaseAuth.instance.verifyPhoneNumber(
         phoneNumber:'+91'+ phoneController.text,
-        verificationCompleted: (PhoneAuthCredential Credentials) {}, 
-        verificationFailed: (FirebaseAuthException ex) {
-          // print(ex.code);
-          Get.snackbar('Error Occured', ex.code);
-        }, 
-        codeSent: (String vid, int? token){
-          Get.to(OtpPage(vid: vid));
-        }, 
-        codeAutoRetrievalTimeout: (vid){}
-        );
+        verificationCompleted: (PhoneAuthCredential credential) {},
+        verificationFailed: (FirebaseAuthException e) {
+          print(e.message);
+          Get.snackbar('Error Occured 1', e.message ?? e.code);
+        },
+        codeSent: (String verificationId, int? resendToken) {
+          Get.to(OtpPage(vid: verificationId));
+        },
+        codeAutoRetrievalTimeout: (String verificationId) {},
+      );
     }on FirebaseAuthException catch (e){
       Get.snackbar("Error Occured", e.code);
     } catch(e){

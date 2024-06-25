@@ -2,48 +2,36 @@
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mentalheathstartup/phone_auth.dart';
 import 'package:mentalheathstartup/screens/home_page.dart';
 import 'package:mentalheathstartup/screens/login_page.dart';
 import 'package:mentalheathstartup/theme_notifier.dart';
+import 'package:mentalheathstartup/wrapper.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  bool isAuthenticated = false;
-  String initialRoute = '/login';
-
   runApp(
-    ChangeNotifierProvider(
+     ChangeNotifierProvider(
       create: (_) => ThemeNotifier(), 
-      child: MyApp(
-        initialRoute: initialRoute,
-      ),
+      child: MyApp(),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  final String initialRoute;
-
-  const MyApp({
-    required this.initialRoute,
-    Key? key,
-  }) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
 
-    return MaterialApp(
-      title: 'IITK Mail-Client',
+    return GetMaterialApp(
+      title: 'Mental Health App',
       theme: themeNotifier.getTheme(),
-      initialRoute: initialRoute,
-      routes: {
-        '/login': (context) => const PhoneAuth(),
-        '/home': (context) => HomePage(),
-      },
+      home: Wrapper(),
       debugShowCheckedModeBanner: false,
     );
   }
