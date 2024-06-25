@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBfnqhe0GMrwnUQ7dpuHXaw-F99cf7j5Is</string>
+	<key>GCM_SENDER_ID</key>
+	<string>761144725138</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.mentalheathstartup</string>
+	<key>PROJECT_ID</key>
+	<string>mentalhealthsoftware-c4110</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mentalhealthsoftware-c4110.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:761144725138:ios:5c12366ac4176f02e8604b</string>
+</dict>
+</plist>
